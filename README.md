@@ -1,2 +1,2 @@
-# Linguegem_Java
+# Linguagem_Java
 Exercícios desenvolvidos em Java
