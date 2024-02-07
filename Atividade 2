@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class Atividade2 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int codigo1 = 1;
+        int codigo2 = 2;
+        int codigo3 = 3;
+        int codigo4 = 4;
+        int codigo5 = 5;
+        
+        double preco1 = 4.00;
+        double preco2 = 4.50;
+        double preco3 = 5.00;
+        double preco4 = 2.00;
+        double preco5 = 1.50;
+        
+        System.out.println("Digite o codigo do produto");
+        int codigo = sc.nextInt();
+        System.out.println("Digite a quantidade que deseja");
+        int quantidade = sc.nextInt();
+        
+        double resultado = 0;
+        if(codigo == codigo1){
+            resultado = quantidade*preco1;
+        }
+        else if(codigo == codigo2) {
+            resultado = quantidade*preco2;
+        }
+        else if(codigo == codigo3){
+            resultado = quantidade*preco3;
+        }
+        else if(codigo == codigo4){
+            resultado = quantidade*preco4;
+        }
+        else if(codigo == codigo5){
+            resultado = quantidade*preco5;
+        }
+        else{
+            System.out.println("Aguarde Resultado...");
+        }
+        
+        System.out.printf("O valor total da sua compra foi %.2f%n", resultado);
+        sc.close();
+    }
+}
