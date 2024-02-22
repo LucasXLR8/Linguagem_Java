@@ -1,0 +1,59 @@
+/* EXERCICIO DE ORIENTAÇÃO A OBJETO - PASSO A PASSO
+1 - COMECE CRIANDO OS PACOTES
+2 - CRIA AS CLASSES
+3 - DEPOIS CRIA OS OBJETOS
+4 - DEPOIS CRIA OS METODOS
+5 - FAZ AS IMPORTAÇÕES CHAMANDO O PACOTE.OBJETO
+6 - DENTRO DO MAIN PRINCIPAL CHAMA OS OBJETO COM UMA VARIAVEL 
+7 - NO FINAL CHAMA DENTRO DO MAIN OS METODOS COM O NOME DO OBJETO.METODO
+*/
+import xadrez.Peão;
+import xadrez.Cavalo;
+import xadrez.Bispo;       
+        
+public class Aula {
+
+    public static void main(String[] args) {
+        Peão peao = new Peão();
+        Cavalo cavalo = new Cavalo();
+        Bispo bispo = new Bispo();
+        
+        peao.mover();
+        cavalo.mover();
+        bispo.mover();
+    }
+}
+
+public abstract class Peça {
+    public abstract void mover(); /*ESSE É O METODO*/
+}
+
+public class Peão extends Peça{
+    public Peão(){ /*ESSE É O OBJETO*/
+        
+    }
+    @Override
+    public void mover(){/*CHAMANDO O METODO*/
+        System.out.println("Anda pra frente");
+    }
+}
+
+public class Cavalo extends Peça {
+    public Cavalo(){
+        
+    }
+    @Override
+    public void mover(){
+        System.out.println("Anda em L");
+    }
+}
+
+public class Bispo extends Peça {
+    public Bispo(){
+        
+    }
+    @Override
+    public void mover(){
+        System.out.println("Anda em diagonal");
+    }
+}
