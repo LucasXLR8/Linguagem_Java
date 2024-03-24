@@ -1,0 +1,37 @@
+import java.time.Duration;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+        
+        DateTimeFormatter formatacao = DateTimeFormatter.ofPattern("HH:mm");
+        
+        System.out.println("Qual a hora de inicio? ");
+        String entradaStr = leia.nextLine();
+        System.out.println("Qual a hora de saida?");
+        String saidaStr = leia.nextLine();
+        
+        LocalTime entrada = LocalTime.parse(entradaStr, formatacao);
+        LocalTime saida = LocalTime.parse(saidaStr, formatacao);
+        
+        if(entrada.getHour() == 0 && entrada.getMinute() == 0 && saida.getHour() == 0 && saida.getMinute() == 0){
+            System.out.println("O jogo durou 24 horas");
+        }else{
+            Duration soma = Duration.between(entrada, saida);
+        
+        if(soma.isNegative()){
+            soma = soma.plus(Duration.ofHours(24));
+        }
+        
+            if(entrada.getMinute() == 0 && saida.getMinute() == 0){
+               System.out.println("O jogo durou " + soma.toHours() + " horas"); 
+            }else{
+                System.out.println("O jogo durou " + soma.toHours() + " horas e " + soma.toMinutesPart() + " minutos");
+            } 
+        }   
+    }
+}
